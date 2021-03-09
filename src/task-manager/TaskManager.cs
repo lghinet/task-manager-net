@@ -86,6 +86,7 @@ namespace task_manager
             foreach (var proc in processes)
             {
                 proc.Kill();
+                _store.Remove(proc.PID);
             }
         }
 
@@ -97,6 +98,7 @@ namespace task_manager
             foreach (var proc in _store.GetAll().Where(x => x.Running))
             {
                 proc.Kill();
+                _store.Remove(proc.PID);
             }
         }
 

@@ -1,8 +1,6 @@
-using System;
-using System.Linq;
 using FluentAssertions;
+using System.Linq;
 using task_manager;
-using task_manager.ProcessStore;
 using Xunit;
 
 namespace tm_tests
@@ -56,7 +54,5 @@ namespace tm_tests
             list.Select(x => x.PID).Should().BeEquivalentTo("1", "4", "3");
 
         }
-
-      
     }
 }

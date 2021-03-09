@@ -48,6 +48,11 @@ namespace task_manager.ProcessStore
             return true;
         }
 
+        public bool Remove(string pid)
+        {
+            return _processes.RemoveAll(x => x.PID == pid) == 1;
+        }
+
         public Process Get(string pid) => _processes.SingleOrDefault(x => x.PID == pid);
         public IEnumerable<Process> GetAll() => _processes.ToList();
     }
